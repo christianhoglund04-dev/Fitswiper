@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f8f7" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="FitSwiper" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icon-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>FitSwiper</title>
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-swipe" viewBox="0 0 24 24">
+        <path d="M8 5.5 17.5 3 21 16.5 11.5 19z" />
+        <path d="M4 8.5 13.5 6 17 19.5 7.5 22z" />
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24">
+        <path d="M20.3 5.9a5 5 0 0 0-7.1 0L12 7.1l-1.2-1.2a5 5 0 1 0-7.1 7.1L12 21.2l8.3-8.2a5 5 0 0 0 0-7.1z" />
+      </symbol>
+      <symbol id="icon-bag" viewBox="0 0 24 24">
+        <path d="M6.5 8.5h11l1 12h-13z" />
+        <path d="M9 8.5a3 3 0 0 1 6 0" />
+      </symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24">
+        <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
+        <path d="M4.5 20a7.5 7.5 0 0 1 15 0" />
+      </symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24">
+        <path d="M12 5v14" />
+        <path d="M5 12h14" />
+      </symbol>
+      <symbol id="icon-x" viewBox="0 0 24 24">
+        <path d="M6 6l12 12" />
+        <path d="M18 6 6 18" />
+      </symbol>
+      <symbol id="icon-undo" viewBox="0 0 24 24">
+        <path d="M9 7H4v5" />
+        <path d="M4.5 11.5A7.5 7.5 0 1 0 7 6" />
+      </symbol>
+      <symbol id="icon-spark" viewBox="0 0 24 24">
+        <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" />
+        <path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z" />
+      </symbol>
+    </svg>
+    <main class="phone-shell" aria-label="FitSwiper iPhone app">
+      <section class="app-screen">
+        <section class="onboarding" id="onboardingView" aria-label="Välkommen till FitSwiper">
+          <div class="onboarding-collage" aria-hidden="true">
+            <div class="onboarding-column">
+              <img src="assets/outfit-04.png" alt="" />
+              <img src="assets/outfit-01.png" alt="" />
+              <img src="assets/outfit-02.png" alt="" />
+              <img src="assets/outfit-03.png" alt="" />
+            </div>
+            <div class="onboarding-column">
+              <img src="assets/outfit-03.png" alt="" />
+              <img src="assets/outfit-02.png" alt="" />
+              <img src="assets/outfit-04.png" alt="" />
+              <img src="assets/outfit-04.png" alt="" />
+            </div>
+            <div class="onboarding-column">
+              <img src="assets/outfit-03.png" alt="" />
+              <img src="assets/outfit-02.png" alt="" />
+              <img src="assets/outfit-01.png" alt="" />
+              <img src="assets/outfit-03.png" alt="" />
+            </div>
+          </div>
+          <div class="onboarding-wash" aria-hidden="true"></div>
+          <div class="onboarding-brand">
+            <img src="assets/fitswiper-logo.png" alt="" />
+            <span>FitSwiper</span>
+          </div>
+          <div class="onboarding-copy">
+            <h2>Upptäck outfits på ett helt nytt sätt</h2>
+            <p>Swipea looks från kreatörer och samla plaggen du faktiskt vill bära.</p>
+            <div class="onboarding-pills" aria-label="FitSwiper funktioner">
+              <span>Swipe</span>
+              <span>Plagg & priser</span>
+              <span>Style DNA</span>
+            </div>
+          </div>
+          <div class="onboarding-panel">
+            <button class="apple-button" id="continueWithApple" type="button">
+              Fortsätt med Apple
+            </button>
+            <button class="google-button" id="continueWithGoogle" type="button">
+              <span class="google-mark" aria-hidden="true">G</span>
+              Fortsätt med Google
+            </button>
+            <button class="guest-button" id="continueAsGuest" type="button">Utforska direkt</button>
+            <p>Genom att fortsätta godkänner du FitSwipers integritetspolicy och användarvillkor.</p>
+          </div>
+        </section>
+
+        <header class="topbar">
+          <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">
+              <img src="assets/fitswiper-logo.png" alt="" />
+            </div>
+            <div>
+              <p class="eyebrow" id="feedLabel" hidden>Dagens flöde</p>
+              <h1>FitSwiper</h1>
+            </div>
+          </div>
+          <button class="icon-button subtle" id="undoButton" type="button" title="Ångra" aria-label="Ångra">
+            <svg class="button-icon"><use href="#icon-undo"></use></svg>
+          </button>
+        </header>
+
+        <section class="view is-active" id="feedView" data-view="feed" aria-label="Svep outfits">
+          <div class="feed-tools">
+            <div class="taste-panel">
+              <div>
+                <p class="eyebrow">Style DNA</p>
+                <strong id="tasteHeadline">Stilprofil saknas</strong>
+              </div>
+              <span id="tasteBudget">Snitt 0 kr</span>
+            </div>
+            <div class="filter-rail" id="filterRail" aria-label="Filtrera outfits">
+              <button class="filter-chip is-active" type="button" data-filter="all">Alla</button>
+              <button class="filter-chip" type="button" data-filter="budget">Budget</button>
+              <button class="filter-chip" type="button" data-filter="street">Street</button>
+              <button class="filter-chip" type="button" data-filter="evening">Going out</button>
+              <button class="filter-chip" type="button" data-filter="everyday">Everyday</button>
+              <button class="filter-chip" type="button" data-filter="clean">Clean</button>
+              <button class="filter-chip" type="button" data-filter="tailored">Tailored</button>
+            </div>
+          </div>
+          <div class="deck" id="deck" aria-live="polite"></div>
+          <div class="action-row" aria-label="Rösta">
+            <button class="vote-button pass" id="passButton" type="button" title="Dissa" aria-label="Dissa">
+              <svg class="vote-icon"><use href="#icon-x"></use></svg>
+              <span>Dissa</span>
+            </button>
+            <button class="vote-button like" id="likeButton" type="button" title="Hissa" aria-label="Hissa">
+              <svg class="vote-icon"><use href="#icon-heart"></use></svg>
+              <span>Hissa</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="view" id="likedView" data-view="liked" aria-label="Gillade outfits">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Sparat</p>
+              <h2>Hissade outfits</h2>
+            </div>
+            <span class="count-pill" id="likedCount">0</span>
+          </div>
+          <div class="liked-list" id="likedList"></div>
+        </section>
+
+        <section class="view" id="shopView" data-view="shop" aria-label="Köplista">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Från hissade fits</p>
+              <h2>Köplista</h2>
+            </div>
+            <span class="count-pill" id="shopTotal">0 kr</span>
+          </div>
+          <div class="collection-panel" id="collectionPanel"></div>
+          <div class="shop-list" id="shopList"></div>
+        </section>
+
+        <section class="view" id="uploadView" data-view="upload" aria-label="Lägg upp outfit">
+          <div class="auth-gate" data-auth-gate="upload" hidden>
+            <img src="assets/fitswiper-logo.png" alt="" />
+            <p class="eyebrow">Konto krävs</p>
+            <h2>Logga in för att lägga upp outfits</h2>
+            <p>Du kan swipa, hissa och bygga smakprofil utan konto. För att publicera en outfit behöver du logga in.</p>
+            <button class="primary-button" type="button" data-login-action data-provider="Apple">Logga in med Apple</button>
+            <button class="google-button" type="button" data-login-action data-provider="Google">
+              <span class="google-mark" aria-hidden="true">G</span>
+              Logga in med Google
+            </button>
+            <button class="guest-button" type="button" data-tab="feed">Fortsätt swipa</button>
+          </div>
+          <div class="section-head" data-auth-content>
+            <div>
+              <p class="eyebrow">Publicera</p>
+              <h2>Ny outfit</h2>
+            </div>
+          </div>
+          <form class="upload-form" id="uploadForm" data-auth-content>
+            <div class="upload-progress" aria-label="Uppladdningssteg">
+              <button class="upload-step-pill is-active" type="button" data-upload-step="0">
+                <span>1</span> Outfit
+              </button>
+              <button class="upload-step-pill" type="button" data-upload-step="1">
+                <span>2</span> Bild
+              </button>
+              <button class="upload-step-pill" type="button" data-upload-step="2">
+                <span>3</span> Plagg
+              </button>
+            </div>
+            <section class="upload-step is-active" data-upload-step-panel="0">
+              <div class="upload-step-head">
+                <p class="eyebrow">Steg 1 av 3</p>
+                <h3>Namn och kategori</h3>
+              </div>
+              <label>
+                Namn
+                <input name="title" type="text" placeholder="Ex. Fredagsfit" maxlength="36" required />
+              </label>
+              <fieldset class="category-picker">
+                <legend>Kategori</legend>
+                <div class="category-options">
+                  <label class="category-option">
+                    <input name="category" type="radio" value="everyday" required />
+                    <span>Everyday</span>
+                  </label>
+                  <label class="category-option">
+                    <input name="category" type="radio" value="street" />
+                    <span>Street</span>
+                  </label>
+                  <label class="category-option">
+                    <input name="category" type="radio" value="evening" />
+                    <span>Going out</span>
+                  </label>
+                  <label class="category-option">
+                    <input name="category" type="radio" value="minimal" />
+                    <span>Minimal</span>
+                  </label>
+                  <label class="category-option">
+                    <input name="category" type="radio" value="utility" />
+                    <span>Utility</span>
+                  </label>
+                  <label class="category-option">
+                    <input name="category" type="radio" value="clean" />
+                    <span>Clean</span>
+                  </label>
+                  <label class="category-option">
+                    <input name="category" type="radio" value="tailored" />
+                    <span>Tailored</span>
+                  </label>
+                </div>
+              </fieldset>
+            </section>
+            <section class="upload-step" data-upload-step-panel="1">
+              <div class="upload-step-head">
+                <p class="eyebrow">Steg 2 av 3</p>
+                <h3>Välj outfitbild</h3>
+              </div>
+              <label class="image-picker">
+                Bild
+                <input id="outfitImageInput" name="outfitImage" type="file" accept="image/*" required />
+                <span class="image-picker-box">
+                  <img id="uploadImagePreview" src="assets/outfit-04.png" alt="" hidden />
+                  <span id="imagePickerText">Välj outfitbild</span>
+                </span>
+              </label>
+            </section>
+            <section class="upload-step" data-upload-step-panel="2">
+              <div class="upload-items-head">
+                <div>
+                  <p class="eyebrow">Steg 3 av 3</p>
+                  <h3>Pris per plagg</h3>
+                </div>
+                <button class="small-button" id="addItemButton" type="button">＋ Plagg</button>
+              </div>
+              <div class="upload-items" id="uploadItems"></div>
+            </section>
+            <div class="upload-step-actions">
+              <button class="secondary-button" id="uploadBackButton" type="button">Bakåt</button>
+              <button class="primary-button" id="uploadNextButton" type="button">Nästa</button>
+              <button class="primary-button" id="uploadSubmitButton" type="submit" hidden>Lägg i flödet</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="view" id="profileView" data-view="profile" aria-label="Profil">
+          <div class="auth-gate" data-auth-gate="profile" hidden>
+            <img src="assets/fitswiper-logo.png" alt="" />
+            <p class="eyebrow">Din profil</p>
+            <h2>Logga in för att se profilen</h2>
+            <p>Som gäst kan du fortsätta swipa outfits. Logga in när du vill spara din profil och lägga upp egna looks.</p>
+            <button class="primary-button" type="button" data-login-action data-provider="Apple">Logga in med Apple</button>
+            <button class="google-button" type="button" data-login-action data-provider="Google">
+              <span class="google-mark" aria-hidden="true">G</span>
+              Logga in med Google
+            </button>
+            <button class="guest-button" type="button" data-tab="feed">Fortsätt swipa</button>
+          </div>
+          <div class="profile-hero" data-auth-content>
+            <div class="profile-cover" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="profile-identity">
+              <span class="avatar profile-avatar" id="profileAvatar">D</span>
+              <div>
+                <p class="eyebrow" id="profileCityLabel">Stockholm</p>
+                <h2 id="profileDisplayName">Din fit</h2>
+              </div>
+            </div>
+          </div>
+          <div class="section-head profile-section-head" data-auth-content>
+            <div>
+              <p class="eyebrow">Style DNA</p>
+              <h2 id="profileTaste">Stilprofil saknas</h2>
+            </div>
+          </div>
+          <div class="profile-panel" data-auth-content>
+            <div class="profile-stats">
+              <article>
+                <strong id="profileSaved">0</strong>
+                <span>Hissade</span>
+              </article>
+              <article>
+                <strong id="profileLooks">0</strong>
+                <span>Looks</span>
+              </article>
+              <article>
+                <strong id="profileSpend">0 kr</strong>
+                <span>Köplista</span>
+              </article>
+            </div>
+            <form class="profile-edit-form" id="profileForm">
+              <div>
+                <p class="eyebrow">Redigera profil</p>
+                <h3>Namn och stad</h3>
+              </div>
+              <label>
+                Namn
+                <input id="profileNameInput" name="profileName" type="text" maxlength="28" required />
+              </label>
+              <label>
+                Stad
+                <input id="profileCityInput" name="profileCity" type="text" maxlength="28" required />
+              </label>
+              <label class="profile-photo-picker">
+                Profilbild
+                <input id="profilePhotoInput" name="profilePhoto" type="file" accept="image/*" />
+                <span class="profile-photo-box">
+                  <span class="avatar profile-photo-preview" id="profilePhotoPreview">D</span>
+                  <span id="profilePhotoText">Välj profilbild</span>
+                </span>
+              </label>
+              <fieldset class="style-profile-picker">
+                <legend>Stilprofil</legend>
+                <div class="style-profile-options">
+                  <label class="style-profile-option">
+                    <input name="styleProfile" type="radio" value="clean" />
+                    <span>Clean</span>
+                  </label>
+                  <label class="style-profile-option">
+                    <input name="styleProfile" type="radio" value="street" />
+                    <span>Street</span>
+                  </label>
+                  <label class="style-profile-option">
+                    <input name="styleProfile" type="radio" value="tailored" />
+                    <span>Tailored</span>
+                  </label>
+                  <label class="style-profile-option">
+                    <input name="styleProfile" type="radio" value="expressive" />
+                    <span>Expressive</span>
+                  </label>
+                  <label class="style-profile-option">
+                    <input name="styleProfile" type="radio" value="utility" />
+                    <span>Utility</span>
+                  </label>
+                </div>
+              </fieldset>
+              <button class="primary-button profile-save-button" type="submit">Spara profil</button>
+              <button class="secondary-button logout-button" id="logoutButton" type="button">Logga ut</button>
+            </form>
+            <div class="profile-style-card">
+              <div>
+                <p class="eyebrow">Topptaggar</p>
+                <h3>Din vibe</h3>
+              </div>
+              <div class="profile-badges" id="profileBadges"></div>
+            </div>
+            <div class="profile-look-grid" id="profileLookGrid" aria-label="Dina sparade looks"></div>
+          </div>
+        </section>
+
+        <nav class="tabbar" aria-label="Huvudnavigation">
+          <button class="tab is-active" type="button" data-tab="feed" title="Svep" aria-label="Svep">
+            <span class="tab-icon"><svg><use href="#icon-swipe"></use></svg></span>
+            Svep
+          </button>
+          <button class="tab" type="button" data-tab="liked" title="Gillade" aria-label="Gillade">
+            <span class="tab-icon"><svg><use href="#icon-heart"></use></svg></span>
+            Gillade
+            <span class="tab-badge" id="likedTabBadge" hidden>0</span>
+          </button>
+          <button class="tab tab-upload" type="button" data-tab="upload" title="Lägg upp" aria-label="Lägg upp">
+            <span class="tab-icon"><svg><use href="#icon-plus"></use></svg></span>
+            Lägg upp
+          </button>
+          <button class="tab" type="button" data-tab="shop" title="Köplista" aria-label="Köplista">
+            <span class="tab-icon"><svg><use href="#icon-bag"></use></svg></span>
+            Köp
+            <span class="tab-badge" id="shopTabBadge" hidden>0</span>
+          </button>
+          <button class="tab" type="button" data-tab="profile" title="Profil" aria-label="Profil">
+            <span class="tab-icon"><svg><use href="#icon-user"></use></svg></span>
+            Profil
+          </button>
+        </nav>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <div class="sheet" id="detailSheet" aria-hidden="true">
+      <button class="sheet-backdrop" id="sheetBackdrop" type="button" aria-label="Stäng"></button>
+      <section class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+        <div class="sheet-grip" aria-hidden="true"></div>
+        <div class="sheet-header">
+          <div>
+            <p class="eyebrow" id="sheetCreator"></p>
+            <h2 id="sheetTitle"></h2>
+          </div>
+          <button class="icon-button" id="closeSheet" type="button" title="Stäng" aria-label="Stäng">×</button>
+        </div>
+        <div class="item-summary">
+          <img id="sheetImage" src="assets/outfit-01.png" alt="" />
+          <div>
+            <p>Total</p>
+            <strong id="sheetTotal"></strong>
+          </div>
+        </div>
+        <div class="item-list" id="sheetItems"></div>
+      </section>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
